@@ -14,7 +14,7 @@ module.exports = {
       const user = await User.create({
         nome: req.body.nome,
         email: req.body.email,
-        senha: senha,
+        senha: await sails.helpers.containsSpecialCharacter(req.body.senha),
         data_nascimento: req.body.data_nascimento,
         telefone: req.body.telefone,
         cidade: await sails.helpers.consultacep(req.body.cep),

@@ -49,9 +49,8 @@ module.exports.datastores = {
     *                                                                          *
     ***************************************************************************/
     adapter: 'sails-postgresql',
-    url: 'postgres://tripulacaovoluntaria_user:K3UyrnZAPCbewNBTUmSSaSkyJP3iS46m@dpg-cp2ae4v79t8c73fq1gfg-a.oregon-postgres.render.com/tripulacaovoluntaria',
+    url: 'postgres://pablo_azevedo_user:jvtIjSvr1Hm5kgQEGWlwfeeBFCkIEGuy@dpg-coofn7e3e1ms73f5bmg0-a.oregon-postgres.render.com/pablo_azevedo',
     ssl: true,
   },
-
 
 };

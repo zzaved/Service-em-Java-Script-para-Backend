@@ -25,7 +25,6 @@ module.exports.routes = {
   '/teste': { view: 'pages/teste' },
   '/signup': { view: 'pages/signup' },
 
-
   /***************************************************************************
   *                                                                          *
   * More custom routes here...                                               *
@@ -46,6 +45,5 @@ module.exports.routes = {
   //Rotas de manipulação da oportunidade
   'GET /oportunidades/:id': 'OportunidadeController.find',
   'POST /oportunidades': 'OportunidadeController.create',
- 
 
 };
