@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="login.css" />
+  <style>
+    body {
+      height: 100%;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+      overflow-y: hidden;
+    }
+
+    header {
+      background-color: #ebebeb;
+      padding: 10px 20px;
+    }
+
+    header a {
+      color: black;
+      text-decoration: none;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 50px;
+    }
+
+    .logo img {
+      width: 60px;
+      /* Ajuste conforme necessário */
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    ul li {
+      display: inline;
+      margin: 0 0 0 20px;
+    }
+
+    .login {
+      margin: 100px auto;
+      width: 50%;
+      height: 300px;
+      background-color: #ebebeb;
+    }
+
+    form {
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+    }
+
+    input {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 30px;
+      margin-bottom: 10px;
+    }
+
+    .criarConta {
+      margin-bottom: 10px;
+    }
+
+    .email,
+    .senha {
+      width: 200px;
+    }
+
+    .botaoEntrar {
+      background-color: #16239F;
+      color: white;
+      width: 150px;
+      height: 30px;
+      border-radius: 20px;
+    }
+
+    h1 {
+      color: #16239F;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="login" align="center">
+
+    <h1>Login</h1>
+
+    <div>
+      <input class="email" id="emailLogin" required="required" type="email" placeholder="E-mail" />
+    </div>
+
+    <div>
+      <input class="senha" id="senhaLogin" required="required" type="password" placeholder="Senha" />
+    </div>
+    <p id="errorBox"></p>
+    <div>
+      <!--<input class="botaoEntrar" type="submit" value="Entrar" onclick="entrar()"/>-->
+      <button class="botaoEntrar" onclick="entrar()">Entrar</button>
+    </div>
+
+    <div class="criarConta">
+      <p>Não possui uma conta?
+        <a href="/signup">Criar conta</a>
+      </p>
+    </div>
+
+  </div>
+
+  <script>
+    function entrar() {
+      fetch('/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          email: document.getElementById('emailLogin').value,
+          senha: document.getElementById('senhaLogin').value
+        })
+      }).then(response => {
+        if (!response.ok) {
+          return response.text().then(text => { throw new Error(text) })
+        }
+        if (response.status === 201) {
+          window.location.href = '/'
+        }
+        return response.json()
+      }).then(data => {
+        console.log(data)
+      }).catch(error => {
+        console.error(error)
+        document.getElementById('errorBox').innerText = error.message;
+      })
+    }
+  </script>
+
+</body>
+
+
+</html>

@@ -1,0 +1,77 @@
+<div class="container mt-5">
+
+  <!-- Barra de busca -->
+  <div class="search-bar">
+      <!-- Campo de entrada de texto com um placeholder -->
+      <input type="text" placeholder="Que tipo de voluntariado você procura">
+      <!-- Ícone de pesquisa ao lado do campo de texto -->
+      <img src="images/icone-pesquisa.png" alt="Search Icon">
+  </div>
+</div>
+
+<!-- Título das vagas com maior engajamento -->
+<p class="text-start fw-semibold mt-4 ms-4" style="color: #1C3C64;">
+  Vagas com maior engajamento
+</p>
+
+<!-- Carrossel de oportunidades -->
+<div id="carouselOpportunitiesControls" class="carousel slide mt-4 mx-auto" data-bs-ride="carousel" style="width: 50%;">
+  <div class="carousel-inner mx-auto">
+    <!-- Item ativo do carrossel -->
+    <div class="carousel-item active">
+      <img src="" id="carousel1" class="d-block w-100" alt="...">
+    </div>
+    <!-- Segundo item do carrossel -->
+    <div class="carousel-item">
+      <img src="" id="carousel2" class="d-block w-100" alt="...">
+    </div>
+    <!-- Terceiro item do carrossel -->
+    <div class="carousel-item">
+      <img src="" id="carousel3" class="d-block w-100" alt="...">
+    </div>
+  </div>
+
+  <!-- Botão de controle do carrossel para o item anterior -->
+  <button class="carousel-control-prev position-absolute top-50 translate-middle-y ms-4" type="button" data-bs-target="#carouselOpportunitiesControls" data-bs-slide="prev" style="left: -2rem;">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <!-- Botão de controle do carrossel para o próximo item -->
+  <button class="carousel-control-next position-absolute top-50 translate-middle-y me-4" type="button" data-bs-target="#carouselOpportunitiesControls" data-bs-slide="next" style="right: -2rem;">
+
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+<!-- Título OSC's recrutando -->
+<p class="text-start fw-semibold ms-4 mt-4" style="color: #1C3C64;">
+  OSC's recrutando
+</p>
+
+<!-- Botão centralizado com link -->
+<div class="d-flex justify-content-center">
+  <a class="btn btn-primary w-50" href="#" role="button">Link</a>
+</div>
+<div class="d-flex justify-content-center mt-3">
+  <a class="btn btn-primary w-50" href="#" role="button">Link</a>
+</div>
+<div class="d-flex justify-content-center mt-3 mb-5">
+  <a class="btn btn-primary w-50" href="#" role="button">Link</a>
+</div>
+<script>
+  //Loop para preencher os carrosséis com as oportunidades
+    for (let i = 1; i < 4; i++) {
+    console.log("Entrou no loop")
+    fetch('http://localhost:1337/oportunidades/' + i)
+      .then(response => {
+      if (!response.ok) {
+        return response.text().then(text => { throw new Error(text) })
+      }
+      return response.json()
+      //substitui o elemento do carrossel pelo link da foto
+    }).then(data => {document.getElementById('carousel' + i).src = data.link_foto_destaque })
+      .catch(error => { console.error(error) })
+
+  }
+</script>

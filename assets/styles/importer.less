@@ -1,0 +1,238 @@
+
+// style da página opportunities.ejs
+.bg-form {
+    background-color: #1C3C64;
+}
+
+.search-bar {
+    background-color: #1C3C64;
+    border-radius: 20px;
+    padding: 5px 10px;
+    display: flex;
+}
+.search-bar input {
+    border: none;
+    background-color: transparent;
+    color: white;
+    outline: none;
+    flex-grow: 5;   
+}
+.search-bar img {
+    width: 20px;
+    height: 20px;
+}
+
+// style do layout
+.footer {
+    background-color: #f8f9fa;
+    padding: 50px;
+}
+.footer .logo img {
+    max-width: 150px;
+}
+.footer .social-icons img {
+    width: 30px;
+    margin: 0 10px;
+}
+.footer ul {
+    padding-left: 0;
+}
+.no-wrap {
+    white-space: nowrap;
+}
+
+//style homepage
+.imagemDivulgacao img {
+    width: 100%;
+    height: auto; /* Mantém a proporção da imagem*/ 
+    display: block;
+}
+
+.text-container {
+    font-size: 1.25rem;
+}
+
+.btHome {
+    background-color: #013764;
+    border-radius: 10px;
+    padding: 10px 15px;
+}
+
+.search-bar {
+    background-color: #013764;
+    border-radius: 30px;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+  }
+  .search-bar input {
+    border: none;
+    background: none;
+    outline: none;
+    color: white;
+    width: 100%;
+  }
+  .search-bar img {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .category-badge {
+    border-radius: 20px;
+    padding: 10px 15px;
+    margin: 10px;
+    font-size: 1rem;
+    color: white;
+  }
+  .category-educacao {
+    background-color: #F59530;
+  }
+  .category-animais {
+    background-color: #64748B;
+  }
+  .category-arte {
+    background-color: #F6C270;
+  }
+  .category-meio-ambiente {
+    background-color: #FFE15D;
+  }
+  .category-politica {
+    background-color: #F59530;
+  }
+  .category-saude {
+    background-color: #64748B;
+  }
+
+/*body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+    background-color: rgb(255, 255, 255);
+}
+
+header {
+    background-color: #ebebeb;
+    padding: 10px 20px;
+}
+
+header a {
+    color:black;
+    text-decoration: none;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 50px;
+}
+
+.logo img {
+    width: 60px; /* Ajuste conforme necessário 
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul li {
+    display: inline;
+    margin: 0 0 0 20px;
+}
+
+.heroSection {
+    position: relative;
+    width: 100%;
+  }
+  
+  .fraseEfeito {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+  }
+  
+
+.imagemDivulgacao::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Cor preta com 50% de opacidade 
+}
+
+.informacoes {
+  margin: 10% 2% 2% 2%; /* 10% de margem superior, 2% nas laterais e 2% na parte inferior 
+    width: calc(100% - 4%); /* Garante que a largura máxima do conteúdo seja a largura total da página menos as margens laterais 
+    display: flex; /* Define o layout como flexbox 
+    justify-content: space-between; /* Distribui os itens igualmente na linha 
+}
+  
+.cardInformacao {
+    width: 150px; /* Reduz a largura dos cartões 
+    height: 100px; /* Reduz a altura dos cartões 
+    background-color: lightblue; /* Apenas para visualização 
+    margin-bottom: 10px; /* Adicione margem na parte inferior dos cartões (opcional) 
+    margin-right: 10px; /* Aumenta a margem à direita dos cartões 
+}
+
+.sugestoes {
+    margin: 10% 2% 2% 2%; /* 10% de margem superior, 2% nas laterais e 2% na parte inferior 
+    width: calc(20% - 4%); /* Garante que a largura máxima do conteúdo seja a largura total da página menos as margens laterais 
+    display: flex; /* Define o layout como flexbox 
+    justify-content: space-between; /* Distribui os itens igualmente na linha 
+
+}
+
+.busca {
+    margin: auto; /* 100px de margem superior, 20px nas laterais e 20px na parte inferior */ /* Garante que a largura máxima do conteúdo seja a largura total da página menos as margens laterais 
+    display: flex; /* Define o layout como flexbox 
+    justify-content: center; /* Distribui os itens igualmente na linha 
+    border-radius: 25px;
+    background-color: #ebebeb;
+    width: calc(60% - 4%);
+    height: 5%;
+}
+
+.historiaSucesso, .OSCs {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Alinha o conteúdo no centro verticalmente 
+}
+
+.historiaSucesso h1 {
+  margin-bottom: 20px; /* Adiciona margem na parte inferior do título 
+}
+
+.cardCarrosselCases, .cardCarrosselOSCs {
+  width: 200px; /* Largura do slide 
+  height: 200px; /* Altura do slide 
+  background-color: lightblue; /* Apenas para visualização 
+  flex: 0 0 33.33%;
+}
+
+.carousel-item {
+  display: flex;
+}
+
+
+.campoPesquisa {
+  width: calc(80% - 30px);
+  border-radius: 25px;
+}
+
+.cardSugestao {
+    background-color: #ebebeb;
+    border-radius: 25px;
+}*/
